@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots autoplay circular>
+      <block wx:for="{{bannerData}}" wx:key="imageUrl">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src='{{item.imageUrl}}' class="yaoshunyu-banner"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 歌曲列表循环 -->
+  <view class="yaoshunyu-container">
+    <view wx:for="{{songList}}" wx:key="name" class="yaoshunyu-item">
+      <view class="yaoshunyu-item-left">
+        <image src="{{item.album.artist.img1v1Url}}"></image>
+      </view>
+      <view class="yaoshunyu-item-middle">《{{item.name}}》</view>
+      <view class="yaoshunyu-item-right">
+        <image src="/images/play_icon_default.png" bindtap="goToPlay"></image>
+      </view>
+    </view>
+  </view>
+</view>
