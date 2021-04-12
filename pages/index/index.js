@@ -37,9 +37,9 @@ Page({
     })
   },
   // 跳转播放页面
-  goToPlay () {
+  goToPlay (e) {
     wx.navigateTo({
-      url: '/pages/play/play'
+      url: '/pages/play/play?id=' + e.currentTarget.dataset.id
     })
   }
 })

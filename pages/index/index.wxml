@@ -20,7 +20,7 @@
       </view>
       <view class="yaoshunyu-item-middle">《{{item.name}}》</view>
       <view class="yaoshunyu-item-right">
-        <image src="/images/play_icon_default.png" bindtap="goToPlay"></image>
+        <image src="/images/play_icon_default.png" bindtap="goToPlay" data-id="{{item.id}}"></image>
       </view>
     </view>
   </view>

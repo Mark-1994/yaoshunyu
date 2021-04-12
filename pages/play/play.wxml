@@ -1,2 +1,2 @@
 <!--pages/play/play.wxml-->
-<text>pages/play/play.wxml</text>
+<audio src="{{src}}" action="{{action}}"></audio>
