@@ -14,11 +14,11 @@
 
   <!-- 歌曲列表循环 -->
   <view class="yaoshunyu-container">
-    <view wx:for="{{songList}}" wx:key="name" class="yaoshunyu-item">
-      <view class="yaoshunyu-item-left">
-        <image src="{{item.album.artist.img1v1Url}}"></image>
+    <view wx:for="{{songList}}" wx:key="id" class="yaoshunyu-item">
+      <view class="yaoshunyu-item-middle">
+        <view class="yaoshunyu-item-middle-title">{{item.name}}</view>
+        <view class="yaoshunyu-item-middle-des">{{item.artists[0].name}} - {{item.album.name}}</view>
       </view>
-      <view class="yaoshunyu-item-middle">《{{item.name}}》</view>
       <view class="yaoshunyu-item-right">
         <image src="/images/play_icon_default.png" bindtap="goToPlay" data-id="{{item.id}}"></image>
       </view>

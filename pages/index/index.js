@@ -6,7 +6,8 @@ Page({
   data: {
     bannerData: [],
     // 歌曲列表
-    songList: []
+    songList: [],
+    limitDefault: 10
   },
   onLoad() {
     this.getBannerData()
@@ -16,7 +17,7 @@ Page({
   getBannerData () {
     let _this = this
     wx.request({
-      url: 'http://localhost:3000/banner',
+      url: 'http://www.hjmin.com/banner',
       success (res) {
         _this.setData({
           bannerData: res.data.banners
@@ -28,7 +29,7 @@ Page({
   getSongList () {
     let _this = this
     wx.request({
-      url: 'http://localhost:3000/search?keywords=尧顺宇&limit=10',
+      url: 'http://www.hjmin.com/search?keywords=尧顺宇&limit=10',
       success (res) {
         _this.setData({
           songList: res.data.result.songs
@@ -40,6 +41,19 @@ Page({
   goToPlay (e) {
     wx.navigateTo({
       url: '/pages/play/play?id=' + e.currentTarget.dataset.id
+    })
+  },
+  onReachBottom () {
+    let _this = this
+    this.data.limitDefault += 10
+    wx.request({
+      url: 'http://www.hjmin.com/search?keywords=尧顺宇&limit=' + this.data.limitDefault,
+      success (res) {
+        if (res.data.code !== 200) return
+        _this.setData({
+          songList: res.data.result.songs
+        })
+      }
     })
   }
 })

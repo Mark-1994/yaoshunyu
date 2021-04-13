@@ -6,33 +6,37 @@
 
 .yaoshunyu-item {
   display: flex;
-  padding: 10rpx;
-  height: 120rpx;
-}
-
-.yaoshunyu-item-left {
-  flex: 1;
-  text-align: center;
+  margin-left: 20rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .yaoshunyu-item-middle {
-  flex: 3;
-}
-
-.yaoshunyu-item-right {
   flex: 1;
-}
-
-.yaoshunyu-item-left image {
-  width: 120rpx;
-  height: 120rpx;
+  padding: 12rpx 0;
 }
 
 .yaoshunyu-item-right {
-  text-align: center;
+  padding: 0 20rpx;
+}
+
+.yaoshunyu-item-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .yaoshunyu-item-right image {
-  width: 120rpx;
-  height: 120rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.yaoshunyu-item-middle-title {
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+
+.yaoshunyu-item-middle-des {
+  font-size: 24rpx;
+  color: #888;
+  line-height: 36rpx;
 }

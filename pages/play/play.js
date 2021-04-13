@@ -8,7 +8,9 @@ Page({
     src: '',
     action: {
       method: "play"
-    }
+    },
+    songName: '',
+    songWord: ''
   },
 
   /**
@@ -16,6 +18,8 @@ Page({
    */
   onLoad: function (options) {
     this.getSingUrl(options.id)
+    this.getSingLyrics(options.id)
+    this.getSongInfo(options.id)
   },
 
   /**
@@ -24,11 +28,52 @@ Page({
   getSingUrl (id) {
     let _this = this
     wx.request({
-      url: 'http://localhost:3000/song/url?id=' + id,
+      url: 'http://www.hjmin.com/song/url?id=' + id,
       success (res) {
         _this.setData({
           src: res.data.data[0].url
         })
+      }
+    })
+  },
+
+  /**
+   * 获取歌词
+   */
+  getSingLyrics (id) {
+    let _this = this
+    wx.request({
+      url: 'http://www.hjmin.com/lyric?id=' + id,
+      success (res) {
+        _this.setData({
+          songWord: res.data.lrc.lyric
+        })
+      }
+    })
+  },
+
+  /**
+   * 获取歌曲详情
+   */
+  getSongInfo (id) {
+    let _this = this
+    wx.request({
+      url: 'http://www.hjmin.com/song/detail?ids=' + id,
+      success (res) {
+        _this.setData({
+          songName: res.data.songs[0].name
+        })
+      }
+    })
+  },
+
+  /**
+   * 歌曲控制器
+   */
+  controlItem () {
+    this.setData({
+      action: {
+        method: this.data.action.method == "play" ? "pause" : "play"
       }
     })
   },
