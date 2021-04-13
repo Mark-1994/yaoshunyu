@@ -1,13 +1,21 @@
 <!--pages/play/play.wxml-->
 <view class="play-container">
-  <view>{{songName}}</view>
-  <view>
-    <scroll-view scroll-y="true" style="height: 300rpx;">
-      {{songWord}}
-    </scroll-view>
-  </view>
-  <view>
-    <image src="/images/play_icon_default.png" bindtap="controlItem" />
+  <view class="big_img" style="background: url({{bgImg}}) no-repeat center center / cover;"></view>
+  <view class="play-container-body">
+    <view class="play-container-body-control">
+      <image src="/images/needle-ab.png"></image>
+      <image src="/images/disc.png"></image>
+      <image src="/images/disc_default.png"></image>
+      <image src="{{bgImg}}"></image>
+      <image src="{{action.method == 'play' ? '/images/bofang.png' : '/images/zanting.png'}}" bindtap="controlItem" />
+    </view>
+
+    <!--<view>{{songName}}</view>
+    <view>
+      <scroll-view scroll-y="true" style="height: 300rpx;">
+        {{songWord}}
+      </scroll-view>
+    </view>-->
   </view>
 </view>
 

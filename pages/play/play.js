@@ -10,7 +10,8 @@ Page({
       method: "play"
     },
     songName: '',
-    songWord: ''
+    songWord: '',
+    bgImg: ''
   },
 
   /**
@@ -61,7 +62,8 @@ Page({
       url: 'http://www.hjmin.com/song/detail?ids=' + id,
       success (res) {
         _this.setData({
-          songName: res.data.songs[0].name
+          songName: res.data.songs[0].name,
+          bgImg: res.data.songs[0].al.picUrl
         })
       }
     })
