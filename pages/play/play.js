@@ -29,7 +29,7 @@ Page({
   getSingUrl (id) {
     let _this = this
     wx.request({
-      url: 'http://www.hjmin.com/song/url?id=' + id,
+      url: 'https://www.autumnfish.cn/song/url?id=' + id,
       success (res) {
         _this.setData({
           src: res.data.data[0].url
@@ -44,7 +44,7 @@ Page({
   getSingLyrics (id) {
     let _this = this
     wx.request({
-      url: 'http://www.hjmin.com/lyric?id=' + id,
+      url: 'https://www.autumnfish.cn/lyric?id=' + id,
       success (res) {
         _this.setData({
           songWord: res.data.lrc.lyric
@@ -59,7 +59,7 @@ Page({
   getSongInfo (id) {
     let _this = this
     wx.request({
-      url: 'http://www.hjmin.com/song/detail?ids=' + id,
+      url: 'https://www.autumnfish.cn/song/detail?ids=' + id,
       success (res) {
         _this.setData({
           songName: res.data.songs[0].name,

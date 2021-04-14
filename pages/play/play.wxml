@@ -6,7 +6,7 @@
       <image src="/images/needle-ab.png"></image>
       <image src="/images/disc.png"></image>
       <image src="/images/disc_default.png"></image>
-      <image src="{{bgImg}}"></image>
+      <image src="{{bgImg}}" style="{{action.method == 'play' ? 'animation-play-state: running' : 'animation-play-state: paused !important'}}"></image>
       <image src="{{action.method == 'play' ? '/images/bofang.png' : '/images/zanting.png'}}" bindtap="controlItem" />
     </view>
 

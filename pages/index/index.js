@@ -17,7 +17,7 @@ Page({
   getBannerData () {
     let _this = this
     wx.request({
-      url: 'http://www.hjmin.com/banner',
+      url: 'https://www.autumnfish.cn/banner',
       success (res) {
         _this.setData({
           bannerData: res.data.banners
@@ -29,7 +29,7 @@ Page({
   getSongList () {
     let _this = this
     wx.request({
-      url: 'http://www.hjmin.com/search?keywords=尧顺宇&limit=10',
+      url: 'https://www.autumnfish.cn/search?keywords=尧顺宇&limit=10',
       success (res) {
         _this.setData({
           songList: res.data.result.songs
@@ -47,7 +47,7 @@ Page({
     let _this = this
     this.data.limitDefault += 10
     wx.request({
-      url: 'http://www.hjmin.com/search?keywords=尧顺宇&limit=' + this.data.limitDefault,
+      url: 'https://www.autumnfish.cn/search?keywords=尧顺宇&limit=' + this.data.limitDefault,
       success (res) {
         if (res.data.code !== 200) return
         _this.setData({

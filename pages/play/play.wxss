@@ -27,6 +27,7 @@
     position: relative;
     height: 494rpx;
     margin-top: 140rpx;
+    text-align: center;
 }
 
 .play-container-body-control image {
@@ -53,7 +54,11 @@
     width: 368rpx;
     height: 368rpx;
     border-radius: 50%;
-    animation: zhuan 6s linear infinite;
+    left: 0;
+    top: 0;
+    position: relative;
+    animation: zhuan 20s linear infinite;
+    margin-top: 63rpx;
 }
 
 .play-container-body-control image:nth-child(3) {
@@ -76,12 +81,8 @@
 @keyframes zhuan {
     from {
         transform: rotate(0deg);
-        left: 0;
-        top: 0;
     }
     to {
         transform: rotate(360deg);
-        left: 0;
-        top: 0;
     }
 }
